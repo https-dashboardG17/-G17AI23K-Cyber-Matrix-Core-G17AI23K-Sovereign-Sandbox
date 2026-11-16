@@ -1,3 +1,44 @@
+系統存取與授權許可模板 (System Access & Authorization Permission Template)
+一、 基本資訊 (Basic Information)
+授權專案代號：Project-2346 / 主權級清算與路由基礎設施
+模板版本：v1.0 (Steady-State Production)
+生效日期：2026年11月16日
+授權發布主體：核心架構與節點管理委員會
+文件狀態：正式生效 / 嚴格保密
+二、 授權目的與適用範圍 (Objective & Scope)
+本許可模板旨在規範所有參與高吞吐量流動性清算、節點路由維護及跨系統對接之授權人員、系統帳號與智慧合約接口的存取權限。適用範圍包含：
+
+鏈上智慧合約模組：高容量流動性清算合約與白名單管理接口。
+傳統金融與閘道通道：Visa/Debit 結算清算通道及雙節點（台北/高雄）負載路由。
+底層系統與容器環境：標準化 Linux 開發與運行環境（Devcontainers/Codespaces）之維護權限。
+三、 授權角色與權限分級 (Roles & Permission Levels)
+角色層級 (Role Tier)
+職責定義 (Responsibilities)
+許可存取範圍 (Access Scope)
+驗證機制 (Auth Mechanism)
+Tier 1: 系統總架構師 (System Architect)
+負責全域架構掌控、核心合約部署與整體流動性上限調控
+全節點完整讀寫、智能合約擁有者權限、緊急熔斷與開關控制
+多重簽章 (Multisig) + 硬體金鑰
+Tier 2: 節點營運與路由管理員 (Node Operator)
+負責雙節點（台北/高雄）運行狀態監控、負載平衡與閘道重寫設定
+節點服務日誌、IIS 路由配置、環境健康檢查與心跳包檢測
+SSH 金鑰 + 雙因素認證 (2FA)
+Tier 3: 財務與清算稽核員 (Financial Auditor)
+負責清算紀錄稽核、對帳與合規性驗證
+唯讀清算明細、流水帳數據庫、交易回調日誌
+角色型存取控制 (RBAC) 唯讀
+
+四、 核心安全與操作約束 (Security & Operational Constraints)
+最小特權原則 (Principle of Least Privilege)：所有獲授權之實體（人或程序）僅能存取其職責所需之最低必要資源。
+操作日誌留存 (Audit Logging)：所有涉及系統清算參數調整、路由變更及權限異動之操作，必須完整記錄於不可篡改之日誌系統中，保留期限不得少於 5 年。
+金鑰與憑證管理 (Credential Management)：嚴禁明文儲存任何私鑰、API Token 或資料庫連線憑證。所有敏感憑證須存放於受保護之環境變數或加密保險庫中。
+緊急撤銷機制 (Emergency Revocation)：當偵測到異常流量、未授權連線嘗試或安全漏洞時，總架構師有權即時透過緊急熔斷開關撤銷相關授權。
+五、 許可條款與法律效力 (Terms & Legal Compliance)
+保密義務 (Confidentiality)：獲得本許可之各方對系統架構、清算規模、密鑰數據及商業機密負有永久保密義務。
+違規處理 (Violation Handling)：任何越權操作、私自洩漏授權憑證或破壞系統穩定之行為，將立即終止其存取權限，並依法追究相關法律與經濟責任。
+版本更新與終止 (Modification & Termination)：本許可條款得視系統升級與安全需求進行修訂，修訂後經最高授權人簽署即告生效。
+
 MIT License
 
 Copyright (c) 2026 https://dashboardG17
